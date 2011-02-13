@@ -6,25 +6,25 @@ Install the AWS SDK for PHP from http://aws.amazon.com/sdkforphp/
 The easiest way is to use their PEAR channel
 http://pear.amazonwebservices.com/
 
-# pear channel-discover pear.amazonwebservices.com
-# pear install aws/sdk
+`# pear channel-discover pear.amazonwebservices.com`
+`# pear install aws/sdk`
 
 Usage
 =====
 
 First, make sure this library and the PEAR modules are in your include_path
 
-<?php
-require_once('AmazonSESMailer.php');
-
-// Create a mailer class with your Amazon ID/Secret in the constructor
-$mailer = new AmazonSESMailer('your id', 'your secret');
-
-// Then use this object like you would use PHPMailer normally!
-$mailer->AddAddress('you@example.com');
-// ...etc
-$mailer->Send();
-?>
+    <?php
+    require_once('AmazonSESMailer.php');
+    
+    // Create a mailer class with your Amazon ID/Secret in the constructor
+    $mailer = new AmazonSESMailer('your id', 'your secret');
+    
+    // Then use this object like you would use PHPMailer normally!
+    $mailer->AddAddress('you@example.com');
+    // ...etc
+    $mailer->Send();
+    ?>
 
 License
 =======
