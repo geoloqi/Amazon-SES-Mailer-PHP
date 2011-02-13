@@ -7,6 +7,7 @@ The easiest way is to use their PEAR channel
 http://pear.amazonwebservices.com/
 
 `# pear channel-discover pear.amazonwebservices.com`
+
 `# pear install aws/sdk`
 
 Usage
