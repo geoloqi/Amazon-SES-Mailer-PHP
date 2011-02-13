@@ -53,7 +53,7 @@ class AmazonSESMailer extends PHPMailerLite {
 					'Source' => $this->From,
 					'Destinations' => $val
 				));
-			var_dump($response);
+
 				// implement call back function if it exists
 				$isSent = ($response->isOK()) ? 1 : 0;
 				$this->doCallback($isSent,$val,$this->cc,$this->bcc,$this->Subject,$body);
