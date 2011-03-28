@@ -23,7 +23,9 @@ First, make sure this library and the PEAR modules are in your include_path
     
     // Then use this object like you would use PHPMailer normally!
     $mailer->AddAddress('you@example.com');
-    // ...etc
+    $mailer->SetFrom('you@example.com');
+    $mailer->Subject = 'Sent from Amazon SES';
+    $mailer->MsgHtml('This is a test');
     $mailer->Send();
     ?>
 
