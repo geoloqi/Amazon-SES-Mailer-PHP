@@ -44,6 +44,10 @@ class AmazonSESMailer extends PHPMailerLite {
 	*/
 	protected function AmazonSESSend($header, $body) {
 		$ses = new AmazonSES($this->AWSAccessKeyID, $this->AWSSecretKey);
+		$ses = new AmazonSES(array(
+			"key" => $this->AWSAccessKeyID, 
+			"secret" => $this->AWSSecretKey
+			));
 
 		if ($this->SingleTo === true) {
 			foreach ($this->SingleToArray as $key => $val) {
