@@ -22,12 +22,17 @@ First, make sure this library and the PEAR modules are in your include_path
     $mailer = new AmazonSESMailer('your id', 'your secret');
     
     // Then use this object like you would use PHPMailer normally!
-    $mailer->AddAddress('you@example.com');
-    $mailer->SetFrom('you@example.com');
+    $mailer->AddAddress('recipient@example.com');
+    $mailer->SetFrom('sender@example.com');
     $mailer->Subject = 'Sent from Amazon SES';
     $mailer->MsgHtml('This is a test');
     $mailer->Send();
     ?>
+
+Compatibility
+=======
+
+Compatible with [AWS SDK for PHP 1.5 "Allegro"] [0] and newer.
 
 License
 =======
@@ -46,3 +51,5 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+[0]: http://aws.amazon.com/releasenotes/PHP/3719565440874916 "Release Notes: AWS SDK for PHP 1.5 'Allegro'"
