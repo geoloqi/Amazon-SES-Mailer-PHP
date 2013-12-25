@@ -62,7 +62,7 @@ class AmazonSESMailer extends PHPMailerLite {
 				$isSent = ($response->isOK()) ? 1 : 0;
 				$this->doCallback($isSent,$val,$this->cc,$this->bcc,$this->Subject,$body);
 				if(!$isSent) {
-					throw new phpmailerException('Error Sending via Amazon SES', self::STOP_CRITICAL);
+					throw new phpmailerException('Error Sending via Amazon SES [Type: '.$response->body->Error->Type.", Code: ".$response->body->Error->Code.", Message: ".$response->body->Error->Message."]", self::STOP_CRITICAL);
 				}
 			}
 		} else {
@@ -76,7 +76,7 @@ class AmazonSESMailer extends PHPMailerLite {
 			$isSent = ($response->isOK()) ? 1 : 0;
 			$this->doCallback($isSent,$this->to,$this->cc,$this->bcc,$this->Subject,$body);
 			if(!$isSent) {
-				throw new phpmailerException('Error Sending via Amazon SES', self::STOP_CRITICAL);
+				throw new phpmailerException('Error Sending via Amazon SES [Type: '.$response->body->Error->Type.", Code: ".$response->body->Error->Code.", Message: ".$response->body->Error->Message."]", self::STOP_CRITICAL);
 			}
 		}
 		return true;
