@@ -3,12 +3,23 @@ Installation
 
 Install the AWS SDK for PHP from http://aws.amazon.com/sdkforphp/
 
-The easiest way is to use their PEAR channel
-http://pear.amazonwebservices.com/
+The easiest way is to download the 1.5.17.1 release from http://pear.amazonwebservices.com/ and unpack it into the proper place.
 
-`# pear channel-discover pear.amazonwebservices.com`
+After cloning this repository:
 
-`# pear install aws/sdk`
+`# cd (where you cloned this repository)`
+
+Download
+`# wget http://pear.amazonwebservices.com/get/sdk-1.5.17.1.tgz`
+
+Unpack
+`# tar -zxvf sdk-1.5.17.1.tgz`
+
+Rename
+`# mv sdk-1.5.17.1 AWSSDKforPHP`
+
+Clean up
+`# rm sdk-1.5.17.1.tgz`
 
 Usage
 =====
